@@ -11,7 +11,7 @@ echo "Let's Build! :D"
 ThreadCount=$(grep -c ^processor /proc/cpuinfo)
 Time=$(date '+%Y-%m-%d_%H%M')
 
-make -j${ThreadCount} 2>&1 | tee ~/kernels/build-output/${Time}-make.log 
+make V=1 -j${ThreadCount} 2>&1 | tee ~/kernels/build-output/${Time}-make.log 
 
 echo "Sudo Time, Enter password"
 
